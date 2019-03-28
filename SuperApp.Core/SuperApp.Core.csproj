@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Robjects.Core.Forms\Robjects.Core.Forms.csproj" />
+    <ProjectReference Include="..\Robjects.Core\Robjects.Core.csproj" />
+    <ProjectReference Include="..\SuperApp.Models\SuperApp.Models.csproj" />
+  </ItemGroup>
+</Project>

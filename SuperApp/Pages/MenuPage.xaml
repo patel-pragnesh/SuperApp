@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:Robjects.Core.Forms.Pages;assembly=Robjects.Core.Forms"
+    xmlns:controls="clr-namespace:Robjects.Core.Forms.Controls;assembly=Robjects.Core.Forms"
+    xmlns:vm="clr-namespace:SuperApp.Core.ViewModels;assembly=SuperApp.Core"
+    x:Class="SuperApp.Pages.MenuPage"
+    x:TypeArguments="vm:MenuViewModel"
+    Title="Menu">
+    <local:BaseContentPage.Content>
+        <StackLayout>
+            <controls:ListView ItemsSource="{Binding MenuItems}" ItemTappedCommand="{Binding MenutItemSelectedCommand}" 
+                               SeparatorVisibility="None" HasUnevenRows="true" Margin="0,15,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="0" Margin="50,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="1" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="{Binding .}" VerticalOptions="CenterAndExpand" />
+                                <BoxView Grid.Row="1" BackgroundColor="Green" 
+                                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" /> 
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:ListView>
+        </StackLayout>
+    </local:BaseContentPage.Content>
+</local:BaseContentPage>
